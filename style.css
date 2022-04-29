@@ -1,25 +1,26 @@
 html, body {
+  background-color: white;
   margin: 0;
   padding: 0;
-  /* display: flex; 
+  display: flex; 
+  flex-direction: column;
+  /* column-gap: 15px; */
   align-items: center;
-  justify-content: center; */
+  justify-content: center; 
   
 }
 canvas {
+  background-color: #F7F7F7;
   display:flex;
   align-items: center;
   justify-content: center; 
-  margin-top:5%;
-  margin-left: 25%;
+  margin-top:20%;
+  margin-left: 0%;
 }
-h1,label{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+h1,label,select,input,button{
+margin-top: 10px;
+font-family: 'Poppins';
 }
-#sorting-algo{
-display: flex;
-align-items: center;
-justify-content: center;
+h1{
+  color: #094067;
 }

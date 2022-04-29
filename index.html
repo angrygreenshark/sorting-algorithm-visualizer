@@ -12,12 +12,16 @@
     <h1>Algorithm Visualisator</h1>
     <label for="Sorting-algorithms">Select  Sorting Algorithm</label>
     <select name="sorting-algo" id="sorting-algo" onchange="check()">
-      
+        
       <option value="Selection Sort">Selection Sort</option>
       <option value="Quick Sort">QuickSort</option>
+      <option value="Insertion Sort">Insertion Sort</option>
       <option value="Bubble Sort">Bubble Sort</option>
+
     </select>
-    <button id="reset">reset</button>
+    <label for="sorting-delay">Delay:</label>
+    <input type="range" name="sorting-speed" id="speed-slider",min="0",max="30" value="10">
+    <button id="reset">Reset</button>
     <script  src="sketch.js"></script>
     <script src="index.js"></script>
   </body>

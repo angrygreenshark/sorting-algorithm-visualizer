@@ -1,4 +1,11 @@
+const slider=document.getElementById("speed-slider");
+let sorting_speed=slider.value
+slider.oninput = function() {
+  sorting_speed= this.value;
+  console.log("sorting speed:"+sorting_speed)
+}
 function setup() {
+
   // with,height of canvas
   createCanvas(400, 400);
   // number of elements of sort : devide the width by a number
@@ -33,7 +40,7 @@ function setup() {
     return (i+1)
   }
  async function swap(array,i,j){
-    await sleep(10)
+    await sleep(sorting_speed)
     temp=array[i]
     array[i]=array[j]
     array[j]=temp
@@ -78,9 +85,12 @@ async function check(){
         console.log("quicksort")
         break
       case 2:
-        console.log("bubblesort")
-       await bubbleSort(values)
+        console.log("insertion sort")
+       await insertionSort(values)
         break;
+      case 3:
+        console.log("bubble sort")
+        await bubbleSort(values);
             }
   }
   async function bubbleSort(arr){
@@ -90,15 +100,24 @@ async function check(){
           if(arr[j]>arr[j+1]){
          await swap(arr,j,j+1)
           }
-           // let temp=arr[j];
-            //arr[j]=arr[j+1]
-            //arr[j+1]=temp
-         // }
-          // &=arr[j+1]
-          // arr[j+1]=temp
       }
     }
     }
+  async function insertionSort(arr){
+    let j;
+    let key;
+    for (let i = 0; i < arr.length; i++) { 
+       key=arr[i];
+      j=i-1;
+      while (j>=0&&arr[j]>key) {
+        await sleep(sorting_speed)
+        arr[j+1]=arr[j];
+        j=j-1;
+      }
+    }
+    arr[j+1]=key;
+  }
+  
   //reset button 
 const resetlistener=document.querySelector("#reset");
 resetlistener.addEventListener("click",()=>{
