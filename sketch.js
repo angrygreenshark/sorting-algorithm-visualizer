@@ -106,7 +106,7 @@ async function check(){
   async function insertionSort(arr){
     let j;
     let key;
-    for (let i = 0; i < arr.length; i++) { 
+    for (let i = 1; i < arr.length; i++) { 
        key=arr[i];
       j=i-1;
       while (j>=0&&arr[j]>key) {
@@ -114,14 +114,12 @@ async function check(){
         arr[j+1]=arr[j];
         j=j-1;
       }
-    }
     arr[j+1]=key;
+    }
   }
-  
   //reset button 
 const resetlistener=document.querySelector("#reset");
 resetlistener.addEventListener("click",()=>{
 setup();
 draw();
-  
 })
